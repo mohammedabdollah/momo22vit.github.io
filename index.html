@@ -225,16 +225,16 @@
       if (!response.ok) throw new Error('Network response was not ok');
       const blogPosts = await response.json();
       
-      blogList.innerHTML = ''; // Clear existing content
-      blogPosts.forEach(post => {
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = `
-          <h3 style="margin:0 0 6px; font-size: 1.1em;">${post.title}</h3>
-          <p class="muted">${post.description}</p>
-          <div class="stack">
-            <a class="btn ghost" href="${post.url}" target="_blank" rel="noopener">Read More</a>
-          </div>`;
+           card.innerHTML = `
+          ${post.imageUrl? `<img src="${post.imageUrl}" alt="${post.title}" class="featured-image">` : ''}
+          <div class="card-content">
+            <h3 style="margin:0 0 6px; font-size: 1.1em;">${post.title}</h3>
+            <p class="muted">${post.description}</p>
+            <div class="stack">
+              <a class="btn ghost" href="${post.url}" target="_blank" rel="noopener">Read More</a>
+            </div>
+          </div>
+        `;
         blogList.appendChild(card);
       });
     } catch (error) {
