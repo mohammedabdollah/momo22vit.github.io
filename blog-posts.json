@@ -13,5 +13,10 @@
     "title": "How to Create an Effective Personal Budget",
     "description": "A step-by-step guide to building a personal budget that actually works for you.",
     "url": "blog/personal-budget.html"
-  }
+  } ,
+{
+  "title": "Automate Bank Reconciliation in Excel with Power Query",
+  "description": "A step-by-step guide to building a powerful, time-saving reconciliation template using Excel's hidden automation tool.",
+  "url": "blog/bank-reconciliation-excel.html"
+}
 ]
