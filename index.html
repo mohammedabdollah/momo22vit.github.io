@@ -6,7 +6,6 @@
 <title>Mohammed Abdallah | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
 <style>
   :root{
     --bg:#0b1020;          /* background */
@@ -22,7 +21,7 @@
   html,body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:radial-gradient(900px 500px at 80% -10%, #0e1b33 0, transparent 55%),radial-gradient(800px 400px at -10% 10%, #1a1740 0, transparent 60%), var(--bg); color:var(--text); scroll-behavior:smooth}
   a{color:var(--brand); text-decoration:none}
   a:hover{opacity:.9}
-  /* Navbar */
+  /* ====== Navbar ====== */
   header{position:sticky; top:0; z-index:50; background:linear-gradient(180deg, rgba(11,16,32,.8), rgba(11,16,32,.65)); backdrop-filter:blur(10px); border-bottom:1px solid #ffffff1a}
   .nav{max-width:1100px; margin:0 auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px}
   .brand{display:flex; align-items:center; gap:10px}
@@ -31,54 +30,161 @@
   nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0}
   nav a{color:var(--text); padding:8px 12px; border-radius:10px}
   nav a.active, nav a:hover{background:var(--ring)}
-  /* Sections & Cards */
+  /* ====== Sections ====== */
   section{min-height:100vh; display:flex; align-items:center}
   .container{width:min(1100px, 92%); margin-inline:auto}
-  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; box-shadow:0 18px 40px #0006; display:flex; flex-direction:column; height:100%; overflow:hidden;}
+  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; padding:24px; box-shadow:0 18px 40px #0006}
+  .hero{padding:40px 0}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px}
   h1{font-size:clamp(30px, 3.2vw + 10px, 46px); line-height:1.15; margin:0 0 8px}
   h2{font-size:28px; margin:0 0 12px}
-  p.muted{color:var(--muted); flex-grow:1;}
+  p.muted{color:var(--muted)}
   .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; font-weight:700; background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#071018; border:none; cursor:pointer; box-shadow:0 10px 28px #0008}
   .btn.ghost{background:transparent; color:var(--text); border:1px solid #ffffff2a}
-  .stack{display:flex; gap:10px; flex-wrap:wrap; margin-top:auto;}
-  /* Section backgrounds */
+  .stack{display:flex; gap:10px; flex-wrap:wrap}
+  /* colored sections accents */
   #projects{background:linear-gradient(180deg, transparent 0, #121a33 80%, transparent 100%)}
   #skills{background:linear-gradient(180deg, transparent 0, #201a40 80%, transparent 100%)}
   #resume{background:linear-gradient(180deg, transparent 0, #1e2749 80%, transparent 100%)}
   #blog{background:linear-gradient(180deg, transparent 0, #1a2b3f 80%, transparent 100%)}
-  /* Grids */
+  /* grids */
   .grid-3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
   .grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
   .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #ffffff2a; background:#ffffff12; font-size:13px}
-  .proj{padding:24px;} /* Padding for project cards without images */
-  .skills{display:flex; flex-wrap:wrap; gap:10px; padding:24px;}
-  /* Card Image Styles */
-  .card .featured-image{width:100%; aspect-ratio:16 / 9; object-fit:cover;}
-  .card .card-content{padding:24px; display:flex; flex-direction:column; flex-grow:1;}
-  .card.with-image{padding:0;}
-  
+  .proj{display:flex; flex-direction:column; gap:8px}
+  .proj .meta{font-size:13px; color:var(--muted)}
+  .skills{display:flex; flex-wrap:wrap; gap:10px}
   footer{padding:40px 0 60px; text-align:center; color:var(--muted)}
   @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} .grid-3, .grid-2{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
-  <!-- All your HTML sections from before -->
+  <!-- ===== NAVBAR with clickable logo ===== -->
   <header>
     <div class="nav">
-      <a class="brand" href="#home" aria-label="Go home"><span class="logo">MA</span><span class="name">Mohammed Abdallah</span></a>
-      <nav><ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#resume">Resume</a></li><li><a href="#blog">Blog</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+      <a class="brand" href="#home" aria-label="Go home">
+        <span class="logo">MA</span>
+        <span class="name">Mohammed Abdallah</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-  <main>
-    <section id="home" class="hero"><div class="container hero-grid"><div class="card"><div class="card-content"><span class="tag">Aspiring Accountant · ERP · Excel</span><h1>Clear numbers, better decisions — accounting systems for SMEs.</h1><p class="muted">I’m Mohammed, learning and building practical flows with QuickBooks, Odoo, Daftra and SAP FI. I also create Excel tools for posting, AR/AP tracking, and simple dashboards.</p><div class="stack"><a class="btn" href="#contact">Hire / Contact</a><a class="btn ghost" href="#projects">View Projects</a></div></div></div><div class="card"><div class="card-content"><h2>Profile Snapshot</h2><ul class="muted" style="margin:0 0 6px 18px; padding:0;"><li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li><li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li><li>ERP: QuickBooks, Odoo, Daftra, SAP FI (intro).</li><li>Languages: Arabic (native), English (B1).</li></ul></div></div></div></section>
-    <section id="about"><div class="container grid-2"><div class="card"><div class="card-content"><h2>About</h2><p class="muted">I enjoy turning messy numbers into clear, trustworthy records. Recently, I built an Excel posting engine that maps sales/purchase sheets to the ledger and generates P&L.</p></div></div><div class="card"><div class="card-content"><h2>Highlights</h2><ul class="muted" style="margin:0 0 6px 18px; padding:0;"><li>Customized Odoo chart of accounts for a trading SME.</li><li>QuickBooks demo payroll: bank transfer & check scenarios.</li><li>AR aging tracker with alerts and expected collections.</li></ul></div></div></div></section>
-    <section id="projects"><div class="container"><h2>Projects</h2><div class="grid-3" id="projectsGrid"></div></div></section>
-    <section id="skills"><div class="container"><h2>Skills</h2><div class="card skills"><span class="tag">Accounting</span><span class="tag">QuickBooks</span><span class="tag">Odoo</span><span class="tag">Daftra</span><span class="tag">SAP FI (Intro)</span><span class="tag">Excel / PowerQuery</span><span class="tag">English (B1)</span></div></div></section>
-    <section id="resume"><div class="container"><h2>Resume</h2><div class="card"><div class="card-content"><p class="muted">Download my full resume here: <a id="resumeLink" href="#" target="_blank" rel="noopener">Resume PDF</a></p></div></div></div></section>
-    <section id="blog"><div class="container"><h2>Blog</h2><div class="grid-2" id="blogList"></div></div></section>
-    <section id="contact"><div class="container"><h2>Contact</h2><div class="card"><div class="card-content"><div class="stack"><a class="btn" href="mailto:mohammed@mohammedabdollah.online">Email</a><a class="btn ghost" href="https://github.com/momo22vit" target="_blank" rel="noopener">GitHub</a><a class="btn ghost" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="https://wa.me/201062608662" target="_blank" rel="noopener">WhatsApp</a></div></div></div></div></section>
-  </main>
-  <footer><small>© <span id="year"></span> Mohammed Abdallah — Built on GitHub Pages</small></footer>
+
+  <!-- ===== HERO / HOME ===== -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="card">
+        <span class="tag">Aspiring Accountant · ERP · Excel</span>
+        <h1>Clear numbers, better decisions — accounting systems for SMEs.</h1>
+        <p class="muted">I’m Mohammed, learning and building practical flows with QuickBooks, Odoo, Daftra and SAP FI. I also create Excel tools for posting, AR/AP tracking, and simple dashboards.</p>
+        <div class="stack">
+          <a class="btn" href="#contact">Hire / Contact</a>
+          <a class="btn ghost" href="#projects">View Projects</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Profile Snapshot</h2>
+        <ul class="muted" style="margin:0 0 6px 18px">
+          <li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li>
+          <li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li>
+          <li>ERP: QuickBooks, Odoo, Daftra, SAP FI (intro).</li>
+          <li>Languages: Arabic (native), English (B1).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>About</h2>
+        <p class="muted">I enjoy turning messy numbers into clear, trustworthy records. Recently, I built an Excel posting engine that maps sales/purchase sheets to the ledger and generates P&L.</p>
+      </div>
+      <div class="card">
+        <h2>Highlights</h2>
+        <ul class="muted" style="margin:0 0 6px 18px">
+          <li>Customized Odoo chart of accounts for a trading SME.</li>
+          <li>QuickBooks demo payroll: bank transfer & check scenarios.</li>
+          <li>AR aging tracker with alerts and expected collections.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid-3" id="projectsGrid">
+        <!-- JS will inject project cards from projectsData -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="card skills">
+        <span class="tag">Accounting</span>
+        <span class="tag">QuickBooks</span>
+        <span class="tag">Odoo</span>
+        <span class="tag">Daftra</span>
+        <span class="tag">SAP FI (Intro)</span>
+        <span class="tag">Excel / PowerQuery</span>
+        <span class="tag">English (B1)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume">
+    <div class="container">
+      <h2>Resume</h2>
+      <div class="card">
+        <p class="muted">Download my full resume here: <a id="resumeLink" href="#" target="_blank" rel="noopener">Resume PDF</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG (dynamic) ===== -->
+  <section id="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      <div class="grid-2" id="blogList">
+        <!-- JS renders posts here from blogPosts[] -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="card">
+        <div class="stack">
+          <a class="btn" href="mailto:mohammed@mohammedabdollah.online">Email</a>
+          <a class="btn ghost" href="https://github.com/momo22vit" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://wa.me/201062608662" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <small>© <span id="year"></span> Mohammed Abdallah — Built on GitHub Pages</small>
+  </footer>
 
 <script>
   // ===== Smooth active link highlighting using IntersectionObserver
@@ -95,57 +201,47 @@
 
   // ===== Projects data (edit here)
   const projectsData = [
-    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit'},
-    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit'},
-    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', link:'https://github.com/momo22vit'},
+    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', meta:'Excel · Dashboard', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit', tagLink:'#'},
+    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', meta:'Reporting', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit', tagLink:'#'},
+    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', meta:'GitHub', link:'https://github.com/YOUR_GITHUB', tagLink:'#'},
   ];
   const projectsGrid = document.getElementById('projectsGrid');
   projectsData.forEach(p=>{
     const el = document.createElement('article');
     el.className = 'card proj';
-    el.innerHTML = `<h3 style="margin:0; font-size: 1.1em;">${p.title}</h3>
+    el.innerHTML = `<h3 style="margin:0">${p.title}</h3>
       <p class="muted">${p.desc}</p>
-      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open Project</a></div>`;
+      <span class="meta">${p.meta}</span>
+      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open</a></div>`;
     projectsGrid.appendChild(el);
   });
 
-  // ===== Dynamic Blog (edit the array below to add/edit posts) =====
+  // ===== Dynamic Blog (edit the array below to add posts)
   const blogPosts = [
-    {
-   {title:'How I use Odoo for Small Business Accounting', url:'blog/odoo.html', date:'2025-08-25', tags:['Odoo', 'SME',' Guides']},
-      
-    },
-    {
+    {title:'How I use Odoo for Small Business Accounting', url:'blog/odoo.html', date:'2025-08-25', tags:['Odoo','SME','Guides']},
+ {
       title: "Automate Bank Reconciliation in Excel with Power Query",
       description: "A step-by-step guide to building a powerful, time-saving reconciliation template using Excel's hidden automation tool.",
       url: "blog/bank-reconciliation-excel.html",
       imageUrl: "images/excel-power-query.jpg" // Example image path
     },
-    {
-      title: "Tips for Learning Business English Effectively",
-      description: "My personal journey and effective strategies for mastering Business English for a career in finance.",
-      url: "blog/english.html"
-      // This post has no imageUrl, so no image will be shown
-    }
+    {title:'Tips for Learning Business English Effectively', url:'blog/english.html', date:'2025-08-25', tags:['English','Business','Study']},
   ];
-  
   const blogList = document.getElementById('blogList');
-  blogPosts.forEach(post => {
-    const card = document.createElement('article');
-    card.className = post.imageUrl ? 'card with-image' : 'card';
-
-    card.innerHTML = `
-      ${post.imageUrl ? `<img src="${post.imageUrl}" alt="${post.title}" class="featured-image">` : ''}
-      <div class="card-content">
-        <h3 style="margin:0 0 6px; font-size: 1.1em;">${post.title}</h3>
-        <p class="muted">${post.description}</p>
-        <div class="stack">
-          <a class="btn ghost" href="${post.url}" target="_blank" rel="noopener">Read More</a>
-        </div>
-      </div>
-    `;
-    blogList.appendChild(card);
-  });
+  function renderBlog(){
+    blogList.innerHTML = '';
+    blogPosts.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    blogPosts.forEach(p=>{
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `<h3 style="margin:0 0 6px">${p.title}</h3>
+        <p class="muted" style="margin:0 0 8px">${new Date(p.date).toLocaleDateString()}</p>
+        <div class="stack">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
+        <p style="margin-top:10px"><a class="btn ghost" href="${p.url}">Read</a></p>`;
+      blogList.appendChild(card);
+    });
+  }
+  renderBlog();
 
   // ===== Resume link (set once here)
   document.getElementById('resumeLink').href = 'YOUR_RESUME_LINK';
