@@ -35,7 +35,7 @@
   /* ====== Sections ====== */
   section{min-height:100vh; display:flex; align-items:center}
   .container{width:min(1100px, 92%); margin-inline:auto}
-  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; padding:24px; box-shadow:0 18px 40px #0006; display:flex; flex-direction:column; height: 100%;}
+  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; box-shadow:0 18px 40px #0006; display:flex; flex-direction:column; height: 100%; overflow: hidden;}
   .hero{padding:40px 0}
   .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px}
   h1{font-size:clamp(30px, 3.2vw + 10px, 46px); line-height:1.15; margin:0 0 8px}
@@ -53,10 +53,28 @@
   .grid-3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
   .grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
   .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #ffffff2a; background:#ffffff12; font-size:13px}
-  .proj{display:flex; flex-direction:column; gap:8px}
+  .proj{display:flex; flex-direction:column; gap:8px; padding:24px;} /* Added padding back for project cards */
   .proj .meta{font-size:13px; color:var(--muted)}
-  .skills{display:flex; flex-wrap:wrap; gap:10px}
+  .skills{display:flex; flex-wrap:wrap; gap:10px; padding: 24px;}
   footer{padding:40px 0 60px; text-align:center; color:var(--muted)}
+
+  /* === Styles for Featured Images in Cards === */
+  .card .featured-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin-bottom: 0; /* Removed margin to connect with content */
+  }
+  .card .card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; /* Allows content to fill space */
+  }
+  .card.with-image {
+      padding: 0; /* Reset padding for cards with images */
+  }
+  
   @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} .grid-3, .grid-2{grid-template-columns:1fr} }
 </style>
 </head>
@@ -85,172 +103,5 @@
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="card">
-        <span class="tag">Aspiring Accountant · ERP · Excel</span>
-        <h1>Clear numbers, better decisions — accounting systems for SMEs.</h1>
-        <p class="muted">I’m Mohammed, learning and building practical flows with QuickBooks, Zoho Books, Daftra,Odoo. I also create Excel tools for posting, AR/AP tracking, and simple dashboards.</p>
-        <div class="stack">
-          <a class="btn" href="#contact">Hire / Contact</a>
-          <a class="btn ghost" href="#projects">View Projects</a>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Profile Snapshot</h2>
-        <ul class="muted" style="margin:0 0 6px 18px; padding:0;">
-          <li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li>
-          <li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li>
-          <li>ERP: QuickBooks, Odoo, Daftra, Zoho Books .</li>
-          <li>Languages: Arabic (native), English (B1-B2).</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <div class="container grid-2">
-      <div class="card">
-        <h2>About</h2>
-        <p class="muted">I enjoy turning messy numbers into clear, trustworthy records. Recently, I built an Excel posting engine that maps sales/purchase sheets to the ledger and generates P&L.</p>
-      </div>
-      <div class="card">
-        <h2>Highlights</h2>
-        <ul class="muted" style="margin:0 0 6px 18px; padding:0;">
-          <li>Customized Odoo chart of accounts for a trading SME.</li>
-          <li>QuickBooks demo payroll: bank transfer & check scenarios.</li>
-          <li>AR aging tracker with alerts and expected collections.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="grid-3" id="projectsGrid">
-        <!-- JS will inject project cards from projectsData -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="card skills">
-        <span class="tag">Accounting</span>
-        <span class="tag">QuickBooks</span>
-        <span class="tag">Odoo</span>
-        <span class="tag">Daftra</span>
-        <span class="tag">Excel / PowerQuery</span>
-        <span class="tag">English (B1-B2)</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RESUME ===== -->
-  <section id="resume">
-    <div class="container">
-      <h2>Resume</h2>
-      <div class="card">
-        <p class="muted">Download my full resume here: <a id="resumeLink" href="#" target="_blank" rel="noopener">Resume PDF</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BLOG (dynamic) ===== -->
-  <section id="blog">
-    <div class="container">
-      <h2>Blog</h2>
-      <div class="grid-2" id="blogList">
-        <!-- JS renders posts here from blog-posts.json -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="card">
-        <div class="stack">
-          <a class="btn" href="mailto:mohammed@mohammedabdollah.online">Email</a>
-          <a class="btn ghost" href="https://github.com/momo22vit" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/mohammedabdallafpa/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn ghost" href="https://wa.me/201062608662" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <small>© <span id="year"></span> Mohammed Abdallah — Built on GitHub Pages</small>
-  </footer>
-
-<script>
-  // ===== Smooth active link highlighting using IntersectionObserver
-  const links = Array.from(document.querySelectorAll('header nav a'));
-  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      const id = '#' + e.target.id;
-      const link = links.find(l => l.getAttribute('href')===id);
-      if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); link && link.classList.add('active'); }
-    });
-  },{threshold:0.55});
-  sections.forEach(s=>obs.observe(s));
-
-  // ===== Projects data (edit here)
-  const projectsData = [
-    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', meta:'Excel · Dashboard', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit'},
-    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', meta:'Reporting', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit'},
-    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', meta:'GitHub', link:'https://github.com/YOUR_GITHUB'},
-  ];
-  const projectsGrid = document.getElementById('projectsGrid');
-  projectsData.forEach(p=>{
-    const el = document.createElement('article');
-    el.className = 'card proj';
-    el.innerHTML = `<h3 style="margin:0; font-size: 1.1em;">${p.title}</h3>
-      <p class="muted">${p.desc}</p>
-      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open Project</a></div>`;
-    projectsGrid.appendChild(el);
-  });
-
-  // ===== Dynamic Blog (fetches from blog-posts.json) =====
-  const blogList = document.getElementById('blogList');
-  
-  async function fetchAndRenderBlog() {
-    try {
-      const response = await fetch('blog-posts.json');
-      if (!response.ok) throw new Error('Network response was not ok');
-      const blogPosts = await response.json();
-      
-           card.innerHTML = `
-          ${post.imageUrl? `<img src="${post.imageUrl}" alt="${post.title}" class="featured-image">` : ''}
-          <div class="card-content">
-            <h3 style="margin:0 0 6px; font-size: 1.1em;">${post.title}</h3>
-            <p class="muted">${post.description}</p>
-            <div class="stack">
-              <a class="btn ghost" href="${post.url}" target="_blank" rel="noopener">Read More</a>
-            </div>
-          </div>
-        `;
-        blogList.appendChild(card);
-      });
-    } catch (error) {
-      console.error('Failed to fetch blog posts:', error);
-      blogList.innerHTML = `<p class="muted">Could not load blog posts.</p>`;
-    }
-  }
-  
-  fetchAndRenderBlog();
-
-
-  // ===== Resume link (set once here)
-  document.getElementById('resumeLink').href = 'YOUR_RESUME_LINK';
-
-  // ===== Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+        <div class="card-content">
+          <span class="tag">Aspiring Accountant · ERP · Exce
