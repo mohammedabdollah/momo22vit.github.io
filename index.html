@@ -1,247 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mohammed Abdallah | Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b1020;          /* background */
-    --text:#eaf1ff;        /* base text */
-    --muted:#a6b3d6;       /* secondary text */
-    --brand:#6ee7f0;       /* cyan */
-    --brand2:#8b5cf6;      /* violet */
-    --brand3:#f59e0b;      /* amber */
-    --card: #0f1930aa;     /* glass card */
-    --ring: #6ee7f044;     /* focus ring */
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:radial-gradient(900px 500px at 80% -10%, #0e1b33 0, transparent 55%),radial-gradient(800px 400px at -10% 10%, #1a1740 0, transparent 60%), var(--bg); color:var(--text); scroll-behavior:smooth}
-  a{color:var(--brand); text-decoration:none}
-  a:hover{opacity:.9}
-  /* ====== Navbar ====== */
-  header{position:sticky; top:0; z-index:50; background:linear-gradient(180deg, rgba(11,16,32,.8), rgba(11,16,32,.65)); backdrop-filter:blur(10px); border-bottom:1px solid #ffffff1a}
-  .nav{max-width:1100px; margin:0 auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px}
-  .brand{display:flex; align-items:center; gap:10px}
-  .brand .logo{display:inline-grid; place-items:center; width:40px; height:40px; border-radius:12px; background:conic-gradient(from 180deg, var(--brand), var(--brand2), var(--brand3), var(--brand)); color:#00111a; font-weight:800; box-shadow:0 10px 24px #0006}
-  .brand .name{font-weight:800; letter-spacing:.3px; color:var(--text)}
-  nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0}
-  nav a{color:var(--text); padding:8px 12px; border-radius:10px}
-  nav a.active, nav a:hover{background:var(--ring)}
-  /* ====== Sections ====== */
-  section{min-height:100vh; display:flex; align-items:center}
-  .container{width:min(1100px, 92%); margin-inline:auto}
-  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; padding:24px; box-shadow:0 18px 40px #0006}
-  .hero{padding:40px 0}
-  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px}
-  h1{font-size:clamp(30px, 3.2vw + 10px, 46px); line-height:1.15; margin:0 0 8px}
-  h2{font-size:28px; margin:0 0 12px}
-  p.muted{color:var(--muted)}
-  .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; font-weight:700; background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#071018; border:none; cursor:pointer; box-shadow:0 10px 28px #0008}
-  .btn.ghost{background:transparent; color:var(--text); border:1px solid #ffffff2a}
-  .stack{display:flex; gap:10px; flex-wrap:wrap}
-  /* colored sections accents */
-  #projects{background:linear-gradient(180deg, transparent 0, #121a33 80%, transparent 100%)}
-  #skills{background:linear-gradient(180deg, transparent 0, #201a40 80%, transparent 100%)}
-  #resume{background:linear-gradient(180deg, transparent 0, #1e2749 80%, transparent 100%)}
-  #blog{background:linear-gradient(180deg, transparent 0, #1a2b3f 80%, transparent 100%)}
-  /* grids */
-  .grid-3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
-  .grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
-  .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #ffffff2a; background:#ffffff12; font-size:13px}
-  .proj{display:flex; flex-direction:column; gap:8px}
-  .proj .meta{font-size:13px; color:var(--muted)}
-  .skills{display:flex; flex-wrap:wrap; gap:10px}
-  footer{padding:40px 0 60px; text-align:center; color:var(--muted)}
-  @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} .grid-3, .grid-2{grid-template-columns:1fr} }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Abdallah | Portfolio</title>
+    <!-- Google Fonts for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ====== ALL CSS IS NOW INSIDE THE HTML FILE ====== */
+
+        /* ====== Global Styles & Variables ====== */
+        :root {
+            --bg-dark: #111827;       /* Main background */
+            --bg-light: #1F2937;      /* Card background */
+            --primary-color: #14b8a6; /* Teal accent */
+            --text-light: #F9FAFB;    /* Light text */
+            --text-dark: #9CA3AF;     /* Muted text */
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            scroll-behavior: smooth;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        main {
+            padding-top: 80px; /* Prevent content from hiding behind fixed header */
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--bg-light);
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        /* ====== Header / Navbar ====== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-light);
+            transition: transform 0.3s ease;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            color: var(--text-light);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+
+        nav li a {
+            color: var(--text-dark);
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav li a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* ====== Card Layout for Projects & Blog ====== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .card {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .card p {
+            font-size: 1em;
+            flex-grow: 1;
+        }
+
+        /* ====== General Button Style ====== */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #10a391;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* ====== Skills Section ====== */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skills-container span {
+            background: var(--bg-light);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 1em;
+        }
+
+        /* ====== Contact Section ====== */
+        .contact-links p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .contact-links strong {
+            color: var(--text-dark);
+        }
+
+        /* ====== Footer ====== */
+        footer {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 30px 0;
+        }
+        footer p {
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        /* ====== Responsive Design ====== */
+        @media(max-width: 768px) {
+            h2 { font-size: 2.2em; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
-  <!-- ===== NAVBAR with clickable logo ===== -->
-  <header>
-    <div class="nav">
-      <a class="brand" href="#home" aria-label="Go home">
-        <span class="logo">MA</span>
-        <span class="name">Mohammed Abdallah</span>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- ===== HERO / HOME ===== -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="card">
-        <span class="tag">Aspiring Accountant · ERP · Excel</span>
-        <h1>Clear numbers, better decisions — accounting systems for SMEs.</h1>
-        <p class="muted">I’m Mohammed, learning and building practical flows with QuickBooks, Odoo, Daftra and SAP FI. I also create Excel tools for posting, AR/AP tracking, and simple dashboards.</p>
-        <div class="stack">
-          <a class="btn" href="#contact">Hire / Contact</a>
-          <a class="btn ghost" href="#projects">View Projects</a>
+    <!-- ====== Header / Navbar ====== -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">M<span>.</span>Abdallah</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-      <div class="card">
-        <h2>Profile Snapshot</h2>
-        <ul class="muted" style="margin:0 0 6px 18px">
-          <li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li>
-          <li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li>
-          <li>ERP: QuickBooks, Odoo, Daftra, SAP FI (intro).</li>
-          <li>Languages: Arabic (native), English (B1).</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <div class="container grid-2">
-      <div class="card">
-        <h2>About</h2>
-        <p class="muted">I enjoy turning messy numbers into clear, trustworthy records. Recently, I built an Excel posting engine that maps sales/purchase sheets to the ledger and generates P&L.</p>
-      </div>
-      <div class="card">
-        <h2>Highlights</h2>
-        <ul class="muted" style="margin:0 0 6px 18px">
-          <li>Customized Odoo chart of accounts for a trading SME.</li>
-          <li>QuickBooks demo payroll: bank transfer & check scenarios.</li>
-          <li>AR aging tracker with alerts and expected collections.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <main>
+        <!-- ====== About Section ====== -->
+        <section id="about">
+            <div class="container content-wrapper">
+                <h2>About Me</h2>
+                <p>Hello! I'm <strong>Mohammed Abdallah</strong>, an aspiring accountant with expertise in ERP systems (Odoo, Daftra, SAP FI), Excel, and programming. I enjoy creating accounting solutions that combine technology and finance efficiently.</p>
+            </div>
+        </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="grid-3" id="projectsGrid">
-        <!-- JS will inject project cards from projectsData -->
-      </div>
-    </div>
-  </section>
+        <!-- ====== Projects Section ====== -->
+        <section id="projects">
+            <div class="container content-wrapper">
+                <h2>My Projects</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Excel Budget Analysis</h3>
+                        <p>A comprehensive budget analysis tool built with advanced Excel functions.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit" target="_blank" class="btn">View Project</a>
+                    </div>
+                    <div class="card">
+                        <h3>Accounting Report Sample</h3>
+                        <p>A professional sample of a detailed financial accounting report.</p>
+                        <a href="https://docs.google.com/document/d/YOUR_DOC_ID/edit" target="_blank" class="btn">View Report</a>
+                    </div>
+                    <div class="card">
+                        <h3>GitHub Portfolio</h3>
+                        <p>Explore my other projects and contributions on my GitHub profile.</p>
+                        <a href="https://github.com/YOUR_GITHUB" target="_blank" class="btn">Visit GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="card skills">
-        <span class="tag">Accounting</span>
-        <span class="tag">QuickBooks</span>
-        <span class="tag">Odoo</span>
-        <span class="tag">Daftra</span>
-        <span class="tag">SAP FI (Intro)</span>
-        <span class="tag">Excel / PowerQuery</span>
-        <span class="tag">English (B1)</span>
-      </div>
-    </div>
-  </section>
+        <!-- ====== Skills Section ====== -->
+        <section id="skills">
+            <div class="container content-wrapper">
+                <h2>Professional Skills</h2>
+                <div class="skills-container">
+                    <span>Accounting</span>
+                    <span>Odoo</span>
+                    <span>SAP FI</span>
+                    <span>Daftra</span>
+                    <span>Advanced Excel</span>
+                    <span>Financial Reporting</span>
+                    <span>English (B1)</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ====== Resume Section ====== -->
+        <section id="resume">
+            <div class="container content-wrapper">
+                <h2>My Resume</h2>
+                <p>Interested in my full profile? You can download my resume for more details.</p>
+                <a href="YOUR_RESUME_LINK" target="_blank" class="btn">Download Resume (PDF)</a>
+            </div>
+        </section>
 
-  <!-- ===== RESUME ===== -->
-  <section id="resume">
-    <div class="container">
-      <h2>Resume</h2>
-      <div class="card">
-        <p class="muted">Download my full resume here: <a id="resumeLink" href="#" target="_blank" rel="noopener">Resume PDF</a></p>
-      </div>
-    </div>
-  </section>
+        <!-- ====== Blog Section (Dynamic) ====== -->
+        <section id="blog">
+            <div class="container content-wrapper">
+                <h2>Latest Blog Posts</h2>
+                <div id="blog-posts-grid" class="card-grid"></div>
+            </div>
+        </section>
 
-  <!-- ===== BLOG (dynamic) ===== -->
-  <section id="blog">
-    <div class="container">
-      <h2>Blog</h2>
-      <div class="grid-2" id="blogList">
-        <!-- JS renders posts here from blogPosts[] -->
-      </div>
-    </div>
-  </section>
+        <!-- ====== Contact Section ====== -->
+        <section id="contact">
+            <div class="container content-wrapper">
+                <h2>Get In Touch</h2>
+                <p>I'm always open to discussing new opportunities. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <p><strong>Email:</strong> <a href="mailto:mohammed@mohammedabdollah.online">mohammed@mohammedabdollah.online</a></p>
+                    <p><strong>Phone:</strong> +20 1062608662</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="card">
-        <div class="stack">
-          <a class="btn" href="mailto:mohammed@mohammedabdollah.online">Email</a>
-          <a class="btn ghost" href="https://github.com/momo22vit" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn ghost" href="https://wa.me/201062608662" target="_blank" rel="noopener">WhatsApp</a>
+    <!-- ====== Footer ====== -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Mohammed Abdallah. All Rights Reserved.</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <footer>
-    <small>© <span id="year"></span> Mohammed Abdallah — Built on GitHub Pages</small>
-  </footer>
+    <script>
+        // ====== ALL JAVASCRIPT IS NOW INSIDE THE HTML FILE ======
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogPostsGrid = document.getElementById('blog-posts-grid');
 
-<script>
-  // ===== Smooth active link highlighting using IntersectionObserver
-  const links = Array.from(document.querySelectorAll('header nav a'));
-  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      const id = '#' + e.target.id;
-      const link = links.find(l => l.getAttribute('href')===id);
-      if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); link && link.classList.add('active'); }
-    });
-  },{threshold:0.55});
-  sections.forEach(s=>obs.observe(s));
+            const fetchBlogPosts = async () => {
+                try {
+                    const response = await fetch('blog-posts.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const posts = await response.json();
+                    displayPosts(posts);
+                } catch (error) {
+                    console.error("Could not fetch blog posts:", error);
+                    blogPostsGrid.innerHTML = "<p style='color: #9CA3AF;'>Sorry, we couldn't load the blog posts at this moment.</p>";
+                }
+            };
 
-  // ===== Projects data (edit here)
-  const projectsData = [
-    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', meta:'Excel · Dashboard', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit', tagLink:'#'},
-    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', meta:'Reporting', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit', tagLink:'#'},
-    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', meta:'GitHub', link:'https://github.com/YOUR_GITHUB', tagLink:'#'},
-  ];
-  const projectsGrid = document.getElementById('projectsGrid');
-  projectsData.forEach(p=>{
-    const el = document.createElement('article');
-    el.className = 'card proj';
-    el.innerHTML = `<h3 style="margin:0">${p.title}</h3>
-      <p class="muted">${p.desc}</p>
-      <span class="meta">${p.meta}</span>
-      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open</a></div>`;
-    projectsGrid.appendChild(el);
-  });
+            const displayPosts = (posts) => {
+                if (!posts || posts.length === 0) {
+                    blogPostsGrid.innerHTML = "<p style='color: #9CA3AF;'>No blog posts available yet. Check back soon!</p>";
+                    return;
+                }
+                blogPostsGrid.innerHTML = '';
+                posts.forEach(post => {
+                    const postCard = document.createElement('div');
+                    postCard.className = 'card';
+                    postCard.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <p>${post.description}</p>
+                        <a href="${post.url}" target="_blank" class="btn">Read More</a>
+                    `;
+                    blogPostsGrid.appendChild(postCard);
+                });
+            };
+            fetchBlogPosts();
+        });
+    </script>
 
-  // ===== Dynamic Blog (edit the array below to add posts)
-  const blogPosts = [
-    {title:'How I use Odoo for Small Business Accounting', url:'blog/odoo.html', date:'2025-08-25', tags:['Odoo','SME','Guides']},
-    {title:'Tips for Learning Business English Effectively', url:'blog/english.html', date:'2025-08-25', tags:['English','Business','Study']},
-  ];
-  const blogList = document.getElementById('blogList');
-  function renderBlog(){
-    blogList.innerHTML = '';
-    blogPosts.sort((a,b)=> new Date(b.date) - new Date(a.date));
-    blogPosts.forEach(p=>{
-      const card = document.createElement('article');
-      card.className = 'card';
-      card.innerHTML = `<h3 style="margin:0 0 6px">${p.title}</h3>
-        <p class="muted" style="margin:0 0 8px">${new Date(p.date).toLocaleDateString()}</p>
-        <div class="stack">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
-        <p style="margin-top:10px"><a class="btn ghost" href="${p.url}">Read</a></p>`;
-      blogList.appendChild(card);
-    });
-  }
-  renderBlog();
-
-  // ===== Resume link (set once here)
-  document.getElementById('resumeLink').href = 'YOUR_RESUME_LINK';
-
-  // ===== Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
