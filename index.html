@@ -6,6 +6,7 @@
 <title>Mohammed Abdallah | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --bg:#0b1020;          /* background */
@@ -33,15 +34,15 @@
   /* ====== Sections ====== */
   section{min-height:100vh; display:flex; align-items:center}
   .container{width:min(1100px, 92%); margin-inline:auto}
-  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; padding:24px; box-shadow:0 18px 40px #0006}
+  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; padding:24px; box-shadow:0 18px 40px #0006; display:flex; flex-direction:column; height: 100%;}
   .hero{padding:40px 0}
   .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px}
   h1{font-size:clamp(30px, 3.2vw + 10px, 46px); line-height:1.15; margin:0 0 8px}
   h2{font-size:28px; margin:0 0 12px}
-  p.muted{color:var(--muted)}
+  p.muted{color:var(--muted); flex-grow: 1;}
   .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; font-weight:700; background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#071018; border:none; cursor:pointer; box-shadow:0 10px 28px #0008}
   .btn.ghost{background:transparent; color:var(--text); border:1px solid #ffffff2a}
-  .stack{display:flex; gap:10px; flex-wrap:wrap}
+  .stack{display:flex; gap:10px; flex-wrap:wrap; margin-top: auto;}
   /* colored sections accents */
   #projects{background:linear-gradient(180deg, transparent 0, #121a33 80%, transparent 100%)}
   #skills{background:linear-gradient(180deg, transparent 0, #201a40 80%, transparent 100%)}
@@ -93,7 +94,7 @@
       </div>
       <div class="card">
         <h2>Profile Snapshot</h2>
-        <ul class="muted" style="margin:0 0 6px 18px">
+        <ul class="muted" style="margin:0 0 6px 18px; padding:0;">
           <li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li>
           <li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li>
           <li>ERP: QuickBooks, Odoo, Daftra, Zoho Books .</li>
@@ -112,7 +113,7 @@
       </div>
       <div class="card">
         <h2>Highlights</h2>
-        <ul class="muted" style="margin:0 0 6px 18px">
+        <ul class="muted" style="margin:0 0 6px 18px; padding:0;">
           <li>Customized Odoo chart of accounts for a trading SME.</li>
           <li>QuickBooks demo payroll: bank transfer & check scenarios.</li>
           <li>AR aging tracker with alerts and expected collections.</li>
@@ -161,7 +162,7 @@
     <div class="container">
       <h2>Blog</h2>
       <div class="grid-2" id="blogList">
-        <!-- JS renders posts here from blogPosts[] -->
+        <!-- JS renders posts here from blog-posts.json -->
       </div>
     </div>
   </section>
@@ -200,44 +201,49 @@
 
   // ===== Projects data (edit here)
   const projectsData = [
-    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', meta:'Excel · Dashboard', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit', tagLink:'#'},
-    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', meta:'Reporting', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit', tagLink:'#'},
-    { title: "How to Create an Effective Personal Budget", link: "blog/personal1-budget.html" },
-    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', meta:'GitHub', link:'https://github.com/YOUR_GITHUB', tagLink:'#'},
+    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', meta:'Excel · Dashboard', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit'},
+    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', meta:'Reporting', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit'},
+    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', meta:'GitHub', link:'https://github.com/YOUR_GITHUB'},
   ];
   const projectsGrid = document.getElementById('projectsGrid');
   projectsData.forEach(p=>{
     const el = document.createElement('article');
     el.className = 'card proj';
-    el.innerHTML = `<h3 style="margin:0">${p.title}</h3>
+    el.innerHTML = `<h3 style="margin:0; font-size: 1.1em;">${p.title}</h3>
       <p class="muted">${p.desc}</p>
-      <span class="meta">${p.meta}</span>
-      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open</a></div>`;
+      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open Project</a></div>`;
     projectsGrid.appendChild(el);
   });
 
-  // ===== Dynamic Blog (edit the array below to add posts)
-const blogPosts = [
-  { title: "How I use Odoo for Small Business Accounting", link: "blog/odoo.html" },
-  { title: "Tips for Learning Business English Effectively", link: "blog/english.html" },
-  { title: "How to Create an Effective Personal Budget", link: "blog/personal1-budget.html" }
-];
-
+  // ===== Dynamic Blog (fetches from blog-posts.json) =====
   const blogList = document.getElementById('blogList');
-  function renderBlog(){
-    blogList.innerHTML = '';
-    blogPosts.sort((a,b)=> new Date(b.date) - new Date(a.date));
-    blogPosts.forEach(p=>{
-      const card = document.createElement('article');
-      card.className = 'card';
-      card.innerHTML = `<h3 style="margin:0 0 6px">${p.title}</h3>
-        <p class="muted" style="margin:0 0 8px">${new Date(p.date).toLocaleDateString()}</p>
-        <div class="stack">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
-        <p style="margin-top:10px"><a class="btn ghost" href="${p.url}">Read</a></p>`;
-      blogList.appendChild(card);
-    });
+  
+  async function fetchAndRenderBlog() {
+    try {
+      const response = await fetch('blog-posts.json');
+      if (!response.ok) throw new Error('Network response was not ok');
+      const blogPosts = await response.json();
+      
+      blogList.innerHTML = ''; // Clear existing content
+      blogPosts.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3 style="margin:0 0 6px; font-size: 1.1em;">${post.title}</h3>
+          <p class="muted">${post.description}</p>
+          <div class="stack">
+            <a class="btn ghost" href="${post.url}" target="_blank" rel="noopener">Read More</a>
+          </div>`;
+        blogList.appendChild(card);
+      });
+    } catch (error) {
+      console.error('Failed to fetch blog posts:', error);
+      blogList.innerHTML = `<p class="muted">Could not load blog posts.</p>`;
+    }
   }
-  renderBlog();
+  
+  fetchAndRenderBlog();
+
 
   // ===== Resume link (set once here)
   document.getElementById('resumeLink').href = 'YOUR_RESUME_LINK';
