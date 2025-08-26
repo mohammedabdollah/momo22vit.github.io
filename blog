@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I use Odoo for Small Business Accounting</title>
+    <!-- يمكنك نسخ نفس تنسيقات CSS من صفحتك الرئيسية هنا لمظهر متناسق -->
+    <style>
+        body { 
+            font-family: Inter, system-ui, sans-serif; 
+            background: #0b1020; 
+            color: #eaf1ff; 
+            line-height: 1.7;
+        }
+        .article-container {
+            max-width: 750px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #6ee7f0; /* Brand color */
+        }
+        a {
+            color: #8b5cf6; /* Brand color 2 */
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="article-container">
+        <h1>How I use Odoo for Small Business Accounting</h1>
+        
+        <p>
+            هنا تبدأ في كتابة محتوى مقالتك بالتفصيل. يمكنك إضافة فقرات، صور، أو أي شيء تريده.
+        </p>
+        
+        <p>
+            This is where you write the full content of your article. Explain the concepts, add examples, and structure your thoughts clearly.
+        </p>
+
+        <br>
+        <a href="../index.html#blog">&larr; Back to Portfolio</a>
+    </div>
+
+</body>
+</html>
