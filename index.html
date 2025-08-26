@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="D_A80bgOMhMv594Q9C0wsDIgYiOCNjsDH9qn8xe_cMg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mohammed Abdallah | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
 <style>
   :root{
     --bg:#0b1020;          /* background */
@@ -35,15 +33,15 @@
   /* ====== Sections ====== */
   section{min-height:100vh; display:flex; align-items:center}
   .container{width:min(1100px, 92%); margin-inline:auto}
-  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; box-shadow:0 18px 40px #0006; display:flex; flex-direction:column; height: 100%; overflow: hidden;}
+  .card{background:var(--card); border:1px solid #ffffff1a; border-radius:22px; padding:24px; box-shadow:0 18px 40px #0006}
   .hero{padding:40px 0}
   .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px}
   h1{font-size:clamp(30px, 3.2vw + 10px, 46px); line-height:1.15; margin:0 0 8px}
   h2{font-size:28px; margin:0 0 12px}
-  p.muted{color:var(--muted); flex-grow: 1;}
+  p.muted{color:var(--muted)}
   .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; font-weight:700; background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#071018; border:none; cursor:pointer; box-shadow:0 10px 28px #0008}
   .btn.ghost{background:transparent; color:var(--text); border:1px solid #ffffff2a}
-  .stack{display:flex; gap:10px; flex-wrap:wrap; margin-top: auto;}
+  .stack{display:flex; gap:10px; flex-wrap:wrap}
   /* colored sections accents */
   #projects{background:linear-gradient(180deg, transparent 0, #121a33 80%, transparent 100%)}
   #skills{background:linear-gradient(180deg, transparent 0, #201a40 80%, transparent 100%)}
@@ -53,28 +51,10 @@
   .grid-3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
   .grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
   .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #ffffff2a; background:#ffffff12; font-size:13px}
-  .proj{display:flex; flex-direction:column; gap:8px; padding:24px;} /* Added padding back for project cards */
+  .proj{display:flex; flex-direction:column; gap:8px}
   .proj .meta{font-size:13px; color:var(--muted)}
-  .skills{display:flex; flex-wrap:wrap; gap:10px; padding: 24px;}
+  .skills{display:flex; flex-wrap:wrap; gap:10px}
   footer{padding:40px 0 60px; text-align:center; color:var(--muted)}
-
-  /* === Styles for Featured Images in Cards === */
-  .card .featured-image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      margin-bottom: 0; /* Removed margin to connect with content */
-  }
-  .card .card-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1; /* Allows content to fill space */
-  }
-  .card.with-image {
-      padding: 0; /* Reset padding for cards with images */
-  }
-  
   @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} .grid-3, .grid-2{grid-template-columns:1fr} }
 </style>
 </head>
@@ -103,26 +83,22 @@
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="card">
-        <div class="card-content">
-          <span class="tag">Aspiring Accountant · ERP · Excel</span>
-          <h1>Clear numbers, better decisions — accounting systems for SMEs.</h1>
-          <p class="muted">I’m Mohammed, learning and building practical flows with QuickBooks, Zoho Books, Daftra,Odoo. I also create Excel tools for posting, AR/AP tracking, and simple dashboards.</p>
-          <div class="stack">
-            <a class="btn" href="#contact">Hire / Contact</a>
-            <a class="btn ghost" href="#projects">View Projects</a>
-          </div>
+        <span class="tag">Aspiring Accountant · ERP · Excel</span>
+        <h1>Clear numbers, better decisions — accounting systems for SMEs.</h1>
+        <p class="muted">I’m Mohammed, learning and building practical flows with QuickBooks, Odoo, Daftra and SAP FI. I also create Excel tools for posting, AR/AP tracking, and simple dashboards.</p>
+        <div class="stack">
+          <a class="btn" href="#contact">Hire / Contact</a>
+          <a class="btn ghost" href="#projects">View Projects</a>
         </div>
       </div>
       <div class="card">
-        <div class="card-content">
-          <h2>Profile Snapshot</h2>
-          <ul class="muted" style="margin:0 0 6px 18px; padding:0;">
-            <li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li>
-            <li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li>
-            <li>ERP: QuickBooks, Odoo, Daftra, Zoho Books .</li>
-            <li>Languages: Arabic (native), English (B1-B2).</li>
-          </ul>
-        </div>
+        <h2>Profile Snapshot</h2>
+        <ul class="muted" style="margin:0 0 6px 18px">
+          <li>Accounting: journal entries, bank rec., AR/AP, inventory basics.</li>
+          <li>Excel: Pivot, Power Query, LOOKUP/XMATCH, dynamic arrays.</li>
+          <li>ERP: QuickBooks, Odoo, Daftra, SAP FI (intro).</li>
+          <li>Languages: Arabic (native), English (B1).</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -131,20 +107,16 @@
   <section id="about">
     <div class="container grid-2">
       <div class="card">
-        <div class="card-content">
-          <h2>About</h2>
-          <p class="muted">I enjoy turning messy numbers into clear, trustworthy records. Recently, I built an Excel posting engine that maps sales/purchase sheets to the ledger and generates P&L.</p>
-        </div>
+        <h2>About</h2>
+        <p class="muted">I enjoy turning messy numbers into clear, trustworthy records. Recently, I built an Excel posting engine that maps sales/purchase sheets to the ledger and generates P&L.</p>
       </div>
       <div class="card">
-        <div class="card-content">
-          <h2>Highlights</h2>
-          <ul class="muted" style="margin:0 0 6px 18px; padding:0;">
-            <li>Customized Odoo chart of accounts for a trading SME.</li>
-            <li>QuickBooks demo payroll: bank transfer & check scenarios.</li>
-            <li>AR aging tracker with alerts and expected collections.</li>
-          </ul>
-        </div>
+        <h2>Highlights</h2>
+        <ul class="muted" style="margin:0 0 6px 18px">
+          <li>Customized Odoo chart of accounts for a trading SME.</li>
+          <li>QuickBooks demo payroll: bank transfer & check scenarios.</li>
+          <li>AR aging tracker with alerts and expected collections.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -168,8 +140,9 @@
         <span class="tag">QuickBooks</span>
         <span class="tag">Odoo</span>
         <span class="tag">Daftra</span>
+        <span class="tag">SAP FI (Intro)</span>
         <span class="tag">Excel / PowerQuery</span>
-        <span class="tag">English (B1-B2)</span>
+        <span class="tag">English (B1)</span>
       </div>
     </div>
   </section>
@@ -179,9 +152,7 @@
     <div class="container">
       <h2>Resume</h2>
       <div class="card">
-        <div class="card-content">
-          <p class="muted">Download my full resume here: <a id="resumeLink" href="#" target="_blank" rel="noopener">Resume PDF</a></p>
-        </div>
+        <p class="muted">Download my full resume here: <a id="resumeLink" href="#" target="_blank" rel="noopener">Resume PDF</a></p>
       </div>
     </div>
   </section>
@@ -191,7 +162,7 @@
     <div class="container">
       <h2>Blog</h2>
       <div class="grid-2" id="blogList">
-        <!-- JS renders posts here from blog-posts.json -->
+        <!-- JS renders posts here from blogPosts[] -->
       </div>
     </div>
   </section>
@@ -201,9 +172,76 @@
     <div class="container">
       <h2>Contact</h2>
       <div class="card">
-        <div class="card-content">
-          <div class="stack">
-            <a class="btn" href="mailto:mohammed@mohammedabdollah.online">Email</a>
-            <a class="btn ghost" href="https://github.com/momo22vit" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/mohammedabdallafpa/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn ghost" href="https://wa.me/201062608662" ta
+        <div class="stack">
+          <a class="btn" href="mailto:mohammed@mohammedabdollah.online">Email</a>
+          <a class="btn ghost" href="https://github.com/momo22vit" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://wa.me/201062608662" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <small>© <span id="year"></span> Mohammed Abdallah — Built on GitHub Pages</small>
+  </footer>
+
+<script>
+  // ===== Smooth active link highlighting using IntersectionObserver
+  const links = Array.from(document.querySelectorAll('header nav a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const id = '#' + e.target.id;
+      const link = links.find(l => l.getAttribute('href')===id);
+      if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); link && link.classList.add('active'); }
+    });
+  },{threshold:0.55});
+  sections.forEach(s=>obs.observe(s));
+
+  // ===== Projects data (edit here)
+  const projectsData = [
+    {title:'Excel Budget Analysis', desc:'Interactive budget vs actuals with charts.', meta:'Excel · Dashboard', link:'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit', tagLink:'#'},
+    {title:'Accounting Report (Sample)', desc:'Simple monthly P&L and balance sheet in Google Docs.', meta:'Reporting', link:'https://docs.google.com/document/d/YOUR_DOC_ID/edit', tagLink:'#'},
+    {title:'GitHub Portfolio', desc:'Collection of mini‑tools and templates.', meta:'GitHub', link:'https://github.com/YOUR_GITHUB', tagLink:'#'},
+  ];
+  const projectsGrid = document.getElementById('projectsGrid');
+  projectsData.forEach(p=>{
+    const el = document.createElement('article');
+    el.className = 'card proj';
+    el.innerHTML = `<h3 style="margin:0">${p.title}</h3>
+      <p class="muted">${p.desc}</p>
+      <span class="meta">${p.meta}</span>
+      <div class="stack"><a class="tag" href="${p.link}" target="_blank" rel="noopener">Open</a></div>`;
+    projectsGrid.appendChild(el);
+  });
+
+  // ===== Dynamic Blog (edit the array below to add posts)
+  const blogPosts = [
+    {title:'How I use Odoo for Small Business Accounting', url:'blog/odoo.html', date:'2025-08-25', tags:['Odoo','SME','Guides']},
+    {title:'Tips for Learning Business English Effectively', url:'blog/english.html', date:'2025-08-25', tags:['English','Business','Study']},
+  ];
+  const blogList = document.getElementById('blogList');
+  function renderBlog(){
+    blogList.innerHTML = '';
+    blogPosts.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    blogPosts.forEach(p=>{
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `<h3 style="margin:0 0 6px">${p.title}</h3>
+        <p class="muted" style="margin:0 0 8px">${new Date(p.date).toLocaleDateString()}</p>
+        <div class="stack">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
+        <p style="margin-top:10px"><a class="btn ghost" href="${p.url}">Read</a></p>`;
+      blogList.appendChild(card);
+    });
+  }
+  renderBlog();
+
+  // ===== Resume link (set once here)
+  document.getElementById('resumeLink').href = 'YOUR_RESUME_LINK';
+
+  // ===== Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
