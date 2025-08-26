@@ -1,7 +1,7 @@
 [
   {
     "title": "How I use Odoo for Small Business Accounting",
-    "description": "A deep dive into leveraging Odoo's accounting module for efficient financial management in small businesses.",
+    "description": "A deep dive into leveraging Odoo's accounting module for efficient financial management.",
     "url": "blog/odoo.html"
   },
   {
@@ -10,8 +10,8 @@
     "url": "blog/english.html"
   },
   {
-    "title": "New Article Title",
-    "description": "Add a short description for your new article here.",
-    "url": "blog/new-article-link.html"
+    "title": "How to Create an Effective Personal Budget",
+    "description": "A step-by-step guide to building a personal budget that actually works for you.",
+    "url": "blog/personal-budget.html"
   }
 ]
